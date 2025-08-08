@@ -2282,7 +2282,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/blog/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1754638433779),
+    lastupdate: new Date(1754640336994),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2317,9 +2317,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     },
     search: {
       
-
+        appId: 'Z7A3XW4R2I',
+        indexName: 'my-hexo-blog',
+        apiKey: '12db1ad54372045549ef465881c17e743',
+        hitsPerPage: '5',
+        placeholder: 'Search...',
+        searchAsYouType: true,
       
-        dataPath: (("/blog/" || "/").endsWith("/") ? "/blog/" || "/" : "/blog//" || "/") + "content.json",
+
       
 
       
@@ -3949,9 +3954,12 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   <script>
   async function loadSearchScript() {
     
+      await volantis.js("https://unpkg.com/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js")
+      await volantis.js("https://unpkg.com/instantsearch.js@4.74.2/dist/instantsearch.production.min.js")
+    
         
     
-    return volantis.js("/blog/js/search/hexo.js");
+    return volantis.js("/blog/js/search/algolia.js");
   }
 
   function loadSearchService() {
